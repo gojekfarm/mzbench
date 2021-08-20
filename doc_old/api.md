@@ -56,7 +56,7 @@ provision_workers=false
 :   Pass to skip installation Workers on the nodes.
 
 node_commit
-:   Commit hash or branch name in the [MZBench repository](https://github.com/mzbench/mzbench/) that should be installed on the nodes.
+:   Commit hash or branch name in the [MZBench repository](https://github.com/djcruz93/mzbench/) that should be installed on the nodes.
 
 Examples:
 
@@ -119,7 +119,7 @@ If the benchmark is still running, the logs will be streamed continuously until 
 ```bash
 $ curl http://mzbench.myserver.com/logs?id=122
 12:17:16.000 [info] [ API ] Node repo: {git_install_spec,
-                                        "https://github.com/mzbench/mzbench.git",
+                                        "https://github.com/djcruz93/mzbench.git",
                                         "2729662cb1a393f66b84b25b27f58190afd43e85",
                                         "node"}
 ...

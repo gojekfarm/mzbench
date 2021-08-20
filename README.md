@@ -15,7 +15,7 @@ MZBench is:
  - **Cloud-aware:** MZBench can allocates nodes directly from Amazon EC2 or run on a local machine.
  - **Scalable:** tested with 100 nodes and millions of connections.
  - **Extendable:** write your own [cloud plugins](doc/cloud_plugins.md#how-to-write-a-cloud-plugin) and [workers](doc/workers.md#how-to-write-a-worker).
- - **Open-source:** MZBench is released under the [BSD license](https://github.com/mzbench/mzbench/blob/master/LICENSE).
+ - **Open-source:** MZBench is released under the [BSD license](https://github.com/djcruz93/mzbench/blob/master/LICENSE).
 
 [Read the docs →](https://satori-com.github.io/mzbench)
 
@@ -23,7 +23,7 @@ MZBench is:
 
 Out-of-the-box it supports [HTTP](workers/http), [MySQL](workers/mysql), [PostgreSQL](workers/pgsql), [MongoDB](workers/mongo), [Cassandra](workers/cassandra), [XMPP](workers/xmpp), [AMQP](workers/amqp), [TCP](workers/tcp), [Shell commands execution](workers/exec), [Simplified HTTP](workers/simple_http), and [TCPKali](workers/tcpkali).
 
-Implementing addtional protocols is [not that hard](doc/workers.md#how-to-write-a-worker), but if you want something particular to be implemented — feel free to create an [issue](https://github.com/mzbench/mzbench/issues).
+Implementing addtional protocols is [not that hard](doc/workers.md#how-to-write-a-worker), but if you want something particular to be implemented — feel free to create an [issue](https://github.com/djcruz93/mzbench/issues).
 
 ## Installation
 
@@ -31,7 +31,7 @@ Implementing addtional protocols is [not that hard](doc/workers.md#how-to-write-
 
 Available for CentOS 7 and Amazon Linux.
 
-Download MZBench RPM from [Github releases page](https://github.com/mzbench/mzbench/releases)
+Download MZBench RPM from [Github releases page](https://github.com/djcruz93/mzbench/releases)
 
 ```bash
 # Install RPM
@@ -52,7 +52,7 @@ Docker is a container platform, more information is available at its [website](h
 docker run -d -p 4800:80 --name mzbench_server docker.io/ridrisov/mzbench
 ```
 
-After that, open http://localhost:4800/ to see the dashboard. Sources for this docker image are available on [github](https://github.com/mzbench/mzbench/tree/master/docker).
+After that, open http://localhost:4800/ to see the dashboard. Sources for this docker image are available on [github](https://github.com/djcruz93/mzbench/tree/master/docker).
 
 Instead of download the image from the docker hub, you may want to build it manually:
 
@@ -83,14 +83,14 @@ To use MZBench, you'll need:
 Download MZBench from GitHub and install Python requirements:
 
 ```bash
-$ git clone https://github.com/mzbench/mzbench
+$ git clone https://github.com/djcruz93/mzbench
 $ sudo pip install -r mzbench/requirements.txt
 ```
 
 If you want to use virtualenv (optional) to isolate Python dependencies:
 
 ```bash
-$ git clone https://github.com/mzbench/mzbench
+$ git clone https://github.com/djcruz93/mzbench
 $ cd mzbench
 $ virtualenv venv
 $ source venv/bin/activate
