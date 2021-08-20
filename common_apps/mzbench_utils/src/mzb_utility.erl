@@ -26,7 +26,7 @@ random_binary(N) -> crypto:rand_bytes(N).
 
 random_list(N) -> erlang:binary_to_list(random_binary(N)).
 
-random_string(N) -> base64:encode_to_string(random_binary(N)).
+random_string(N) -> lists:flatten(io_lib:format('{"timestamp":"~p", "string":~p}', [os:system_time(), base64:encode_to_string(random_binary(N))])).
 
 random_number(N) -> crypto:rand_uniform(0, N).
 
