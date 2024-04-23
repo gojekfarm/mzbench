@@ -1,5 +1,5 @@
 [
-    {make_install, [{git, "https://github.com/djcruz93/mzbench.git"},
+    {make_install, [{git, "https://github.com/gojekfarm/mzbench.git"},
                     {dir, "workers/xmpp"}]},
 
     {pool, [{size, {numvar, "users-number", 50000}},

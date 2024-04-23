@@ -1,5 +1,5 @@
 [
-%    {make_install, [{git, "https://github.com/djcruz93/mzbench.git"},
+%    {make_install, [{git, "https://github.com/gojekfarm/mzbench.git"},
 %                    {dir, "worker_templates/python_empty"}]},
     {pool, [
         {size, 3},
