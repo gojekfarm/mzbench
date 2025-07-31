@@ -102,7 +102,7 @@ def cmd(command):
         return check_output(args)
 
 def remote_cmd(host, command, ssh_opts = ""):
-    ssh_cmd = "ssh -A -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=false {0} {1} \"source /etc/profile; {2}\"".format(ssh_opts, host, command)
+    ssh_cmd = "ssh -p 2222 -A -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=false {0} {1} \"source /etc/profile; {2}\"".format(ssh_opts, host, command)
     return cmd(ssh_cmd)
 
 def mangle_experiment_name(name):
