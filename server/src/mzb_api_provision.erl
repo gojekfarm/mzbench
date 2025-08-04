@@ -187,7 +187,7 @@ ensure_file(UserName, Hosts, LocalPath, RemotePath, Logger) ->
     Logger(info, "[ SCP ] ~s -> ~s<HOST>:~s~n  for ~p", [LocalPath, UserNameParam, RemotePath, Hosts]),
     _ = mzb_lists:pmap(
         fun (Host) ->
-            mzb_subprocess:exec_format("scp -o StrictHostKeyChecking=no ~s ~s~s:~s",
+            mzb_subprocess:exec_format("scp -P 2222 -o StrictHostKeyChecking=no ~s ~s~s:~s",
                 [LocalPath, UserNameParam, Host, RemotePath], [stderr_to_stdout], fun (_, _, _) -> ok end)
         end, Hosts),
     ok.
@@ -255,7 +255,7 @@ download_file(User, Host, FromFile, ToFile, Logger) ->
             % also we can't create tmp file in /tmp because it is often being
             % mounted to a different fs than target file and it makes file:rename to fail
             TmpFile = mzb_file:tmp_filename(filename:dirname(ToFile)),
-            _ = mzb_subprocess:exec_format("scp -o StrictHostKeyChecking=no ~s~s:~s ~s",
+            _ = mzb_subprocess:exec_format("scp -P 2222 -o StrictHostKeyChecking=no ~s~s:~s ~s",
                 [UserNameParam, [Host], FromFile, TmpFile], [stderr_to_stdout], Logger),
             Logger(info, "[ MV ] ~s -> ~s", [TmpFile, ToFile]),
             ok = file:rename(TmpFile, ToFile)
